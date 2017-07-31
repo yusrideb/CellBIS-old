@@ -19,83 +19,83 @@ our ($language, $date_lang);
 
 # Subroutine for set languages :
 # ------------------------------------------------------------------------
-=head1 SUBROUTINE set_lang()
-	
-	Deskripsi subroutine set_lang() :
-	----------------------------------------
-	Subroutine yang berfungsi untuk mengeset languages
-	untuk bulan dan hari. Languages standard in Indonesian.
-	
-	Format parameter $hashdate :
-	----------------------------------------
-	$hashdate = {
-		'month' => [
-			0 => '',
-			1 => 'Januari',
-			2 => 'Februari',
-			3 => 'Maret',
-			4 => 'April',
-			5 => 'Mei',
-			6 => 'Juni',
-			7 => 'Juli',
-			8 => 'Agustus',
-			9 => 'September',
-			10 => 'Oktober',
-			11 => 'November',
-			12 => 'Desember'
-		],
-		'month_short' => [
-			0 => '',
-			1 => 'Jan',
-			2 => 'Feb',
-			3 => 'Mar',
-			4 => 'Apr',
-			5 => 'Mei',
-			6 => 'Jun',
-			7 => 'Jul',
-			8 => 'Agu',
-			9 => 'Sep',
-			10 => 'Okt',
-			11 => 'Nov',
-			12 => 'Des'
-		],
-		'day' => [
-			0 => '',
-			1 => 'Senin',       # Monday
-			2 => 'Selasa',      # Tuesday
-			3 => 'Rabu',        # Wednesday
-			4 => 'Kamis',       # Thursday
-			5 => 'Jum\'at',     # Friday
-			6 => 'Sabtu',       # Saturday
-			7 => 'Minggu'       # Sunday
-		]
-		'day_short' => [
-			0 => '',
-			1 => 'Sen',         # Mon
-			2 => 'Sel',         # Tue
-			3 => 'Rab',         # Wed
-			4 => 'Kam',         # Thu
-			5 => 'Jum',         # Fri
-			6 => 'Sab',         # Sat
-			7 => 'Min'          # Sun
-		]
-	}
-	
-	Format scalar $lang :
-	----------------------------------------
-	$lang       => Available :
-						- 'id_ID' # Indonesia
-						- 'en_US' # Engish US.
-	
-	Parameter subroutine set_lang() :
-	----------------------------------------
-	$hashdate       =>  Berisi Hashref language untuk Bulan dan Hari.
-	
-	Output Parameter :
-	----------------------------------------
-	#
-
-=cut
+#=head1 SUBROUTINE set_lang()
+#
+#	Deskripsi subroutine set_lang() :
+#	----------------------------------------
+#	Subroutine yang berfungsi untuk mengeset languages
+#	untuk bulan dan hari. Languages standard in Indonesian.
+#
+#	Format parameter $hashdate :
+#	----------------------------------------
+#	$hashdate = {
+#		'month' => [
+#			0 => '',
+#			1 => 'Januari',
+#			2 => 'Februari',
+#			3 => 'Maret',
+#			4 => 'April',
+#			5 => 'Mei',
+#			6 => 'Juni',
+#			7 => 'Juli',
+#			8 => 'Agustus',
+#			9 => 'September',
+#			10 => 'Oktober',
+#			11 => 'November',
+#			12 => 'Desember'
+#		],
+#		'month_short' => [
+#			0 => '',
+#			1 => 'Jan',
+#			2 => 'Feb',
+#			3 => 'Mar',
+#			4 => 'Apr',
+#			5 => 'Mei',
+#			6 => 'Jun',
+#			7 => 'Jul',
+#			8 => 'Agu',
+#			9 => 'Sep',
+#			10 => 'Okt',
+#			11 => 'Nov',
+#			12 => 'Des'
+#		],
+#		'day' => [
+#			0 => '',
+#			1 => 'Senin',       # Monday
+#			2 => 'Selasa',      # Tuesday
+#			3 => 'Rabu',        # Wednesday
+#			4 => 'Kamis',       # Thursday
+#			5 => 'Jum\'at',     # Friday
+#			6 => 'Sabtu',       # Saturday
+#			7 => 'Minggu'       # Sunday
+#		]
+#		'day_short' => [
+#			0 => '',
+#			1 => 'Sen',         # Mon
+#			2 => 'Sel',         # Tue
+#			3 => 'Rab',         # Wed
+#			4 => 'Kam',         # Thu
+#			5 => 'Jum',         # Fri
+#			6 => 'Sab',         # Sat
+#			7 => 'Min'          # Sun
+#		]
+#	}
+#
+#	Format scalar $lang :
+#	----------------------------------------
+#	$lang       => Available :
+#						- 'id_ID' # Indonesia
+#						- 'en_US' # Engish US.
+#
+#	Parameter subroutine set_lang() :
+#	----------------------------------------
+#	$hashdate       =>  Berisi Hashref language untuk Bulan dan Hari.
+#
+#	Output Parameter :
+#	----------------------------------------
+#	#
+#
+#=cut
 sub set_lang {
 	# Define parameter subroutine :
 	my $self = shift;
@@ -138,21 +138,21 @@ sub set_lang {
 
 # Subroutine for get languages :
 # ------------------------------------------------------------------------
-=head1 SUBROUTINE get_lang()
-	
-	Deskripsi subroutine get_lang() :
-	----------------------------------------
-	Subroutine yang berfungsi untuk mengambil data language.
-	
-	Parameter subroutine get_lang() :
-	----------------------------------------
-	$lang           =>  language identify.
-	
-	Output Parameter :
-	----------------------------------------
-	#
-
-=cut
+#=head1 SUBROUTINE get_lang()
+#
+#	Deskripsi subroutine get_lang() :
+#	----------------------------------------
+#	Subroutine yang berfungsi untuk mengambil data language.
+#
+#	Parameter subroutine get_lang() :
+#	----------------------------------------
+#	$lang           =>  language identify.
+#
+#	Output Parameter :
+#	----------------------------------------
+#	#
+#
+#=cut
 sub get_lang {
 	# Define parameter subroutine :
 	my ($self, $lang) = @_;
@@ -171,30 +171,30 @@ sub get_lang {
 
 # Subroutine for Add or Subtract Duration :
 # ------------------------------------------------------------------------
-=head1 SUBROUTINE add_or_subtract()
-	
-	Deskripsi subroutine add_or_subtract() :
-	----------------------------------------
-	Subroutine yang berfungsi untuk menambahkan durasi datetime.
-	
-	Parameter subroutine add_or_subtract() :
-	----------------------------------------
-	$dt             =>  [ Berisi DateTime module initialized ],
-	$minplus        =>  [ Berisi Identification Time Add/Subtract ].
-						Ex :
-								+1D || +D == add 1 day, -1D || -D == subtract 1 day.
-								+1W || +W == add 1 week, -1W || -W == subtract 1 week.
-								+1M || +M == add 1 month, -1M || -M == subtract 1 month.
-								+1Y || +Y == add 1 year, -1Y || -Y == subtract 1 year.
-								+1h || +h == add 1 hour, -1h || -h == subtract 1 hour.
-								+1m || +m == add 1 minute, -1m || -m == subtract 1 minute.
-								+1s || +s == add 1 second, -1s || -s == subtract 1 second.
-	
-	Output Parameter :
-	----------------------------------------
-	#
-
-=cut
+#=head1 SUBROUTINE add_or_subtract()
+#
+#	Deskripsi subroutine add_or_subtract() :
+#	----------------------------------------
+#	Subroutine yang berfungsi untuk menambahkan durasi datetime.
+#
+#	Parameter subroutine add_or_subtract() :
+#	----------------------------------------
+#	$dt             =>  [ Berisi DateTime module initialized ],
+#	$minplus        =>  [ Berisi Identification Time Add/Subtract ].
+#						Ex :
+#								+1D || +D == add 1 day, -1D || -D == subtract 1 day.
+#								+1W || +W == add 1 week, -1W || -W == subtract 1 week.
+#								+1M || +M == add 1 month, -1M || -M == subtract 1 month.
+#								+1Y || +Y == add 1 year, -1Y || -Y == subtract 1 year.
+#								+1h || +h == add 1 hour, -1h || -h == subtract 1 hour.
+#								+1m || +m == add 1 minute, -1m || -m == subtract 1 minute.
+#								+1s || +s == add 1 second, -1s || -s == subtract 1 second.
+#
+#	Output Parameter :
+#	----------------------------------------
+#	#
+#
+#=cut
 sub add_or_subtract {
 	# Define parameter subroutine :
 	my ($self, $dt, $minplus) = @_;
@@ -290,73 +290,73 @@ sub add_or_subtract {
 
 # Subroutine for Get Date Time :
 # ------------------------------------------------------------------------
-=head1 SUBROUTINE get()
-	
-	Deskripsi subroutine get() :
-	----------------------------------------
-	Subroutine yang berfungsi untuk mengambil data DateTime.
-	
-	Format Delimiter in $config :
-	--------------------------------------------------
-	$attribute = {
-		date => '/',
-		time => ':',
-		datetime => [ Delimiter between date and time ],
-		format => [ Format DateTime. Ex: "DD-MM-YYYY hms" ],
-		minplus => [ For Add and Subtract Duration time ],
-	}
-	
-	Format Key "format" in hashref $config :
-	--------------------------------------------------
-	format      =   DD      =>  Date of Calender
-					MM      =>  Mount Number of Calender
-					YYYY    =>  Years of Calender
-					Dn      =>  Day Name of Week
-					dn      =>  Day name sort of Week
-					Di      =>  Day number of Week
-					Mn      =>  Month Name of Calendar
-					h       =>  Hour of clock.
-					m       =>  Minue of clock.
-					s       =>  Second of clock.
-					
-	Format Key "minplus" in hashref $config :
-	--------------------------------------------------
-	minplus     =   +       =>  Add Duration. --> if example current years in 2017 and +1 equals 2018.
-					-       =>  Subtract Duration. --> if example current years in 2017 and -1 equals 2016.
-					D       =>  add/subtract Day.
-					M       =>  add/subtract Month.
-					Y       =>  add/subtract Year.
-					h       =>  add/subtract Hour.
-					m       =>  add/subtract Minutes.
-					s       =>  add/subtract Second.
-	
-	Parameter subroutine get() :
-	--------------------------------------------------
-	$timestamp      =>  Berisi UNIX TimeStamp Format.
-	$timezone       =>  Berisi name TimeZone. Ex: "Asia/Makassar".
-	$attribute      =>  Berisi delimiter yang dinginkan.
-	
-	Output Parameter :
-	--------------------------------------------------
-	$hash_ref = {
-		'custom' => $DateNow_custom,
-		'datetime' => $DateNow,
-		'calender' => {
-			'day_num' => $dayNum,
-			'day_name' => $dayName,
-			'date' => $date_num,
-			'month' => $monthNum,
-			'month_name' => $monthName,
-			'year' => $years
-		},
-		'time' => {
-			'hour' => $hours,
-			'minute' => $minutes,
-			'second' => $second,
-		},
-	}
-	
-=cut
+#=head1 SUBROUTINE get()
+#
+#	Deskripsi subroutine get() :
+#	----------------------------------------
+#	Subroutine yang berfungsi untuk mengambil data DateTime.
+#
+#	Format Delimiter in $config :
+#	--------------------------------------------------
+#	$attribute = {
+#		date => '/',
+#		time => ':',
+#		datetime => [ Delimiter between date and time ],
+#		format => [ Format DateTime. Ex: "DD-MM-YYYY hms" ],
+#		minplus => [ For Add and Subtract Duration time ],
+#	}
+#
+#	Format Key "format" in hashref $config :
+#	--------------------------------------------------
+#	format      =   DD      =>  Date of Calender
+#					MM      =>  Mount Number of Calender
+#					YYYY    =>  Years of Calender
+#					Dn      =>  Day Name of Week
+#					dn      =>  Day name sort of Week
+#					Di      =>  Day number of Week
+#					Mn      =>  Month Name of Calendar
+#					h       =>  Hour of clock.
+#					m       =>  Minue of clock.
+#					s       =>  Second of clock.
+#
+#	Format Key "minplus" in hashref $config :
+#	--------------------------------------------------
+#	minplus     =   +       =>  Add Duration. --> if example current years in 2017 and +1 equals 2018.
+#					-       =>  Subtract Duration. --> if example current years in 2017 and -1 equals 2016.
+#					D       =>  add/subtract Day.
+#					M       =>  add/subtract Month.
+#					Y       =>  add/subtract Year.
+#					h       =>  add/subtract Hour.
+#					m       =>  add/subtract Minutes.
+#					s       =>  add/subtract Second.
+#
+#	Parameter subroutine get() :
+#	--------------------------------------------------
+#	$timestamp      =>  Berisi UNIX TimeStamp Format.
+#	$timezone       =>  Berisi name TimeZone. Ex: "Asia/Makassar".
+#	$attribute      =>  Berisi delimiter yang dinginkan.
+#
+#	Output Parameter :
+#	--------------------------------------------------
+#	$hash_ref = {
+#		'custom' => $DateNow_custom,
+#		'datetime' => $DateNow,
+#		'calender' => {
+#			'day_num' => $dayNum,
+#			'day_name' => $dayName,
+#			'date' => $date_num,
+#			'month' => $monthNum,
+#			'month_name' => $monthName,
+#			'year' => $years
+#		},
+#		'time' => {
+#			'hour' => $hours,
+#			'minute' => $minutes,
+#			'second' => $second,
+#		},
+#	}
+#
+#=cut
 sub get {
 	# Define parameter subroutine :
 	my $self = shift;
@@ -583,23 +583,23 @@ sub get {
 
 # Subroutine for Get Date Time based datetime :
 # ------------------------------------------------------------------------
-=head1 SUBROUTINE get_dt_mysql()
-				
-	Deskripsi subroutine get_dt_mysql() :
-	--------------------------------------------------
-	Subroutine yang berfungsi untk mengambil data time
-	berdasarkan datetime MySQL.
-	
-	Parameter subroutine get_dt_mysql() :
-	--------------------------------------------------
-	my $dt_mysql            =>  Berisi DataTime MySQL.
-	my $timezone            =>  Berisi TimeZone. Ex: "Asia/Makassar".
-	
-	Output Parameter :
-	--------------------------------------------------
-	#
-
-=cut
+#=head1 SUBROUTINE get_dt_mysql()
+#
+#	Deskripsi subroutine get_dt_mysql() :
+#	--------------------------------------------------
+#	Subroutine yang berfungsi untk mengambil data time
+#	berdasarkan datetime MySQL.
+#
+#	Parameter subroutine get_dt_mysql() :
+#	--------------------------------------------------
+#	my $dt_mysql            =>  Berisi DataTime MySQL.
+#	my $timezone            =>  Berisi TimeZone. Ex: "Asia/Makassar".
+#
+#	Output Parameter :
+#	--------------------------------------------------
+#	#
+#
+#=cut
 sub get_dt_mysql {
 	# Define parameter subroutine :
 	my ($self, $dt_mysql, $timezone) = @_;
