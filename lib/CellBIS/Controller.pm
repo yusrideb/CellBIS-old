@@ -3,17 +3,48 @@ use strict;
 use warnings;
 
 # Use Module :
-use Module::Load;
-use CellBIS::Routing;
+use Data::Dumper;
 use Hash::Merge qw( merge );
-use CellBIS::Utils::Char;
-use CellBIS::Devel::QC;
 
 # Version :
-require CellBIS::Version;
-our $VERSION = $CellBIS::Version::VERSION;
+our $VERSION = '0.1000';
 
-# Variable will be use :
+# declare which will be use :
+our $_config = {};
+our $_route = {};
+sub _add;
 
+# Subroutine for config controller :
+# ------------------------------------------------------------------------
+sub _config {
+    # Define parameter subroutine :
+    my ($self, $config) = @_;
+    Carp::croak(q{$config is required})
+        unless defined $config && ref($config) eq 'HASH';
+    my %set_config = %{ merge($_config, $config) };
+    $_config = \%set_config;
+}
+# End of Subroutine for config controller.
+# ===========================================================================================================
+
+# Subroutine for add routes :
+# ------------------------------------------------------------------------
+sub _add {
+    my $self = shift;
+    my %data = ();
+    $data{$_[0]} = $_[1];
+    my %add_controller = %{ merge($_route, \%data) };
+    $_route = \%add_controller;
+}
+# End of Subroutine for add controller.
+# ===========================================================================================================
+
+# Subroutine for get route :
+# ------------------------------------------------------------------------
+sub get_route {
+    return $_route;
+}
+# End of Subroutine for get route.
+# ===========================================================================================================
 
 1;
