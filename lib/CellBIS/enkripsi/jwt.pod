@@ -1,0 +1,100 @@
+=head1 NAME
+
+CellBIS::enkripsi::jwt - Simple implementation JSON Web Token for CellBIS Web Framework based on Crypt::JWT.
+
+=head1 SYNOPSIS
+
+    use CellBIS::enkripsi::jwt;
+
+    # For JWS :
+    my $alg_jws = 'alg1';
+    my $data_jws = 'your data to encode JWS';
+    my $secret_jws = 'yourSecRetJWS';
+
+    # encode :
+    my $jws_encode = CellBIS::enkripsi::jwt->jws($alg_jws, $data_jws, $secret_jws);
+
+    # Output $jws_encode :
+    # eyJhbGciOiJIUzI1NiJ9.eW91ciBkYXRhIHdpbGwgYmUgZW5jb2RlIEpXUw.u5FXlAlF9Z66hl7m6ZejEQG5LBol7GSNZ7tAp9iSI-0
+    # --------------------------------------------------------------------------------------------------------
+    # Length of result encode = 103 Character.
+
+    # For JWE :
+    my $alg_jwe = 'alg2';
+    my $enc_jwe = 'enc1';
+    my $data_jwe = 'your data to encode JWE';
+    my $secret_jwe = 'yourSecRetJWE';
+
+    # encode :
+    my $jwe_encode = CellBIS::enkripsi::jwt->jwe($alg_jwe, $enc_jwe, $data_jwe, $secret_jwe);
+
+    # Output $jwe_encode :
+    # eyJwMmMiOjUwMDAsImFsZyI6IlBCRVMyLUhTMzg0K0ExOTJLVyIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJwMnMiOiI1NTRuRFU4cm5sZmx4VFp6TERkVnhRIn0.
+    # GRjEZ2LtODsr6AjZx2qRAwLM56MZGkSHnFd9844oXFBH_Hy7IH6HIw.
+    # CiUdlB9n0gWvZxdP_YWWGA.
+    # G5uAtW9-D23n488wsQIdvK7pF-KTOjmosUsjsVlaORk.l6jMAC5oGOn2IOZJzOT99A
+    # ----------------------------------------------------------------------------------------------------------------------------
+    # Result JWE encode from this module is one line, on above just example.
+    # and length of result encode = 268 Character.
+
+    # Decode JWS or JWE :
+    # -------------------------------------------------------------------------------------------
+    my $jws_decode = CellBIS::enkripsi::jwt->decode($jws_encode, $secret_jws);
+    my $jwe_decode = CellBIS::enkripsi::jwt->decode($jwe_encode, $secret_jwe);
+
+    # result Decode :
+    # -------------------------------------------------------------------------------------------
+    # Decode JWS = your data to encode JWS.
+    # Decode JWE = your data to encode JWE.
+
+
+=head1 DESCRIPTION
+
+This module is an interface to encode and Decode JSON Web Token (JWT, JWS, JWE) but with simple method.
+This module based L<Crypt::JWT>. Don't use this module if you want JWT implementation more than which in this module.
+You can use L<Crypt::JWT> module and can use too in CellBIS Web Framework.
+
+=head1 SUPPORT
+
+Support of Algorithm and 'enc' headers :
+
+=head2 Algorithm for JWS
+
+    Algorithm Suppport  :
+    -----------------------------------
+    alg1 = HS256
+    alg2 = HS384
+    alg3 = HS512
+
+    For JWS, no need 'enc' header.
+    -----------------------------------
+
+=head2 Algorithm and 'enc' Headers for JWE
+
+    Algorithm Support :
+    -----------------------------------
+    alg1 = PBES2-HS256+A128KW
+    alg2 = PBES2-HS384+A192KW
+    alg3 = PBES2-HS512+A256KW
+
+    'enc' Headers Support :
+    -----------------------------------
+    enc1 = A128CBC-HS256
+    enc2 = A192CBC-HS384
+    enc3 = A256CBC-HS512
+
+=head1 SEE ALSO
+
+If you want use Crypt::JWT. You can read POD of L<Crypt::JWT>.
+
+=head1 AUTHORS
+
+Achmad Yusri Afandi, E<lt>yusrideb@cpan.orgE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2017 by Achmad Yusri Afandi
+
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+=cut
