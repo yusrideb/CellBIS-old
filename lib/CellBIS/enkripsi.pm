@@ -3,14 +3,13 @@ use strict;
 use warnings FATAL => 'all';
 
 # Use or Require Module :
-require CellBIS::Version;
 use Data::Dumper;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use MIME::Base64 ();
 use CellBIS::Utils::Char;
 
 # Version :
-our $VERSION = $CellBIS::Version::VERSION;
+our $VERSION = '0.1000';
 
 # Subroutine for Web Encoder :
 # ------------------------------------------------------------------------

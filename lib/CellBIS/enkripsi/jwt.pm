@@ -3,12 +3,11 @@ use strict;
 use warnings FATAL => 'all';
 
 # Use require Module :
-require CellBIS::Version;
 use Crypt::JWT qw(decode_jwt encode_jwt);
 use CellBIS::enkripsi;
 
 # Version :
-our $VERSION = $CellBIS::Version::VERSION;
+our $VERSION = '0.1000';
 
 # Subroutine for Encode JWS :
 # ------------------------------------------------------------------------
