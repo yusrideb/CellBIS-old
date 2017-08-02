@@ -25,8 +25,16 @@ sub mysql {
     my $db_name = $db_cfg->{'db_name'};
     my $db_host = $db_cfg->{'db_host'};
 
-    # Define database conection :
-    my $dsn = 'DBI:mysql:database='.$db_name.';host='.$db_host;
+    # For Database connection :
+    my $dsn;
+    if (exists $db_cfg->{'db_port'}) {
+        my $db_port = $db_cfg->{'db_port'};
+        $dsn = 'DBI:mysql:database='.$db_name.';host='.$db_host.';port='.$db_port;
+    } else {
+        $dsn = 'DBI:mysql:database='.$db_name.';host='.$db_host;
+    }
+
+    # Initialize Database Connection :
     $dbh = $self->connect($dsn, $db_user, $db_pass, {
             RaiseError => 0,
             PrintError => 0,
