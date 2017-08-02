@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 # Import Module :
 use JSON::XS;
 use parent 'DBI';
-use CellBIS::DBI::error;
+use CellBIS::DB::error;
 
 # Version :
 our $VERSION = '0.1000';
