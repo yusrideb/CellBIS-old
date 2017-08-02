@@ -1,4 +1,4 @@
-package CellBIS::DBI;
+package CellBIS::DB;
 use strict;
 use warnings FATAL => 'all';
 
