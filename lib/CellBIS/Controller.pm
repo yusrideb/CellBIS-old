@@ -45,7 +45,10 @@ sub type_route {
     $data{'type3'} = 'mod3'; # name subroutine in routing Matching
 
     if (exists $data{$r_type}) {
-        return $data{$r_type};
+        my $result = $data{$r_type};
+        return $result;
+    } else {
+        return $data{'type1'};
     }
 }
 # End of Subroutine for type route.
@@ -55,18 +58,22 @@ sub type_route {
 # ------------------------------------------------------------------------
 sub check_type {
 	my ($self, $data_route) = @_;
-    my $data;
+    my $data = '';
 
-    $data_route =~ s/^\///g;
-    $data_route =~ s/\/$//g;
-    my @arr_route = CellBIS::Utils::Char->split_bchar($data_route, '/');
-    my $ori_size_rt = scalar @arr_route;
-    @arr_route = grep { $_ =~ m/(.*)\:(.*)/} @arr_route;
-    my $size_rt = scalar @arr_route;
+    unless ($data_route eq '') {
+        $data_route =~ s/^\///g;
+        $data_route =~ s/\/$//g;
+        my @arr_route = CellBIS::Utils::Char->split_bchar($data_route, '/');
+        my $ori_size_rt = scalar @arr_route;
+        @arr_route = grep { $_ =~ m/(.*)\:(.*)/} @arr_route;
+        my $size_rt = scalar @arr_route;
 
-    $data = 'type1' if $size_rt == 1;
-    $data = 'type2' if $size_rt > 1 && $size_rt < $ori_size_rt;
-    $data = 'type3' if $ori_size_rt == $size_rt;
+        $data = 'type1' if $size_rt == 1;
+        $data = 'type2' if $size_rt > 1 && $size_rt < $ori_size_rt;
+        $data = 'type3' if $ori_size_rt == $size_rt;
+    } else {
+        $data = 'type1';
+    }
 
     return $data;
 }
