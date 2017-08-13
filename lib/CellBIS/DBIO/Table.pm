@@ -1,4 +1,4 @@
-package CellBIS::DBIO::Query;
+package CellBIS::DBIO::Table;
 use strict;
 use warnings FATAL => 'all';
 
