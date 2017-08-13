@@ -59,6 +59,7 @@ sub add_table {
     if ($type_q eq 'sQuery') {
         unless (exists $_schema->{table_name}) {
             my $new_data = Hash::MultiValue->new();
+            $new_data->add('query' => $type_q);
             $new_data->add('table_name' => $table_name);
             $self->{db_schema} = $new_data->as_hashref;
         } else {
